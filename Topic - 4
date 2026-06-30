@@ -7,3 +7,209 @@ Cloud Computing Principles
 Fault Tolerance
 SLA
 Reliability
+ Answer
+
+~☁️ Cloud Computing Principles & CAP Theorem
+
+Cloud computing provides on-demand access to computing resources such as servers, storage, databases, networking, and software over the internet. It enables organizations to scale resources efficiently while reducing infrastructure costs.
+
+1. CAP Theorem
+
+The CAP Theorem, proposed by computer scientist Eric Brewer, states that a distributed system can guarantee only two out of the following three properties at the same time:
+
+C – Consistency
+A – Availability
+P – Partition Tolerance
+
+During a network partition (communication failure between nodes), a distributed system must choose between Consistency and Availability.
+
+The Three Components of CAP
+1. Consistency (C)
+
+Consistency means every user receives the same and most recent data, regardless of which server they access.
+
+Example:
+If you transfer ₹1,000 from one bank account to another, every ATM, mobile app, and website should immediately display the updated balance.
+
+Advantages:
+
+Accurate data
+No stale or outdated information
+
+Disadvantage:
+
+Users may have to wait if the system is synchronizing data.
+2. Availability (A)
+
+Availability means every request receives a response, even if some servers have failed.
+
+The response may not always contain the latest data.
+
+Example:
+A shopping website continues to work during heavy traffic, even if some product information is slightly outdated.
+
+Advantages:
+
+Fast responses
+High uptime
+
+Disadvantage:
+
+Users may temporarily see old data.
+3. Partition Tolerance (P)
+
+Partition Tolerance means the system continues operating even if communication between servers is interrupted.
+
+Example:
+If one data center loses network connectivity, another data center continues serving users.
+
+Advantages:
+
+High fault tolerance
+System remains operational during network failures
+2. CP (Consistency + Partition Tolerance)
+
+A CP system guarantees:
+
+Consistency
+Partition Tolerance
+
+It sacrifices Availability during a network partition.
+
+Example
+
+A banking system.
+
+If two servers cannot communicate, the system may temporarily reject transactions instead of returning incorrect account balances.
+
+Characteristics:
+
+Strong consistency
+May delay or reject requests during failures
+Suitable for banking and financial applications
+3. AP (Availability + Partition Tolerance)
+
+An AP system guarantees:
+
+Availability
+Partition Tolerance
+
+It sacrifices Consistency.
+
+Example
+
+A social media platform.
+
+When you upload a photo, some users may see it immediately while others see it a few seconds later.
+
+Characteristics:
+
+Always responds to requests
+Data becomes consistent eventually
+Suitable for social media and e-commerce
+4. CA (Consistency + Availability)
+
+A CA system guarantees:
+
+Consistency
+Availability
+
+It does not provide Partition Tolerance.
+
+Example
+
+A single-server database inside one office network.
+
+Since there is no distributed network, partition issues do not occur.
+
+Characteristics:
+
+Consistent data
+High availability
+Not suitable for distributed cloud systems
+CAP Theorem Summary
+Type	Consistency	Availability	Partition Tolerance	Example
+CP	✅	❌	✅	Banking systems
+AP	❌	✅	✅	Social media, e-commerce
+CA	✅	✅	❌	Single-server applications
+5. Cloud Computing Principles
+
+Cloud computing provides computing resources over the internet instead of using local servers.
+
+Key Principles
+On-demand self-service
+Broad network access
+Resource pooling
+Rapid elasticity (scaling)
+Measured service (pay-as-you-go)
+Example
+
+A company increases server capacity during a sale and reduces it afterward, paying only for the resources used.
+
+6. Fault Tolerance
+
+Fault Tolerance is the ability of a system to continue operating even if one or more components fail.
+
+Instead of stopping completely, the system switches to backup resources.
+
+Example
+
+An online banking website uses multiple servers. If one server fails, another server immediately takes over, and customers continue using the service.
+
+Techniques
+Multiple servers
+Data replication
+Backup systems
+Load balancing
+Automatic failover
+Benefits
+High availability
+Reduced downtime
+Better user experience
+7. SLA (Service Level Agreement)
+
+An SLA (Service Level Agreement) is a contract between a service provider and a customer that defines the expected level of service.
+
+It specifies:
+
+Uptime guarantee
+Performance targets
+Response time
+Support availability
+Compensation for service failures
+Example
+
+A cloud provider promises 99.9% uptime.
+
+If the uptime falls below the agreed level, the customer may receive service credits or compensation.
+
+Common SLA Uptime Values
+Uptime	Maximum Downtime per Year
+99%	~3.65 days
+99.9%	~8.76 hours
+99.99%	~52.6 minutes
+99.999%	~5.26 minutes
+8. Reliability
+
+Reliability is the ability of a system to perform its intended function correctly and consistently over time without failures.
+
+A reliable system:
+
+Produces accurate results
+Experiences fewer failures
+Recovers quickly from problems
+Example
+
+An online payment gateway processes transactions correctly 24/7 with very few errors.
+
+Ways to Improve Reliability
+Regular backups
+Monitoring and alerts
+Redundant servers
+Preventive maintenance
+Automated recovery mechanisms
+Difference Between Reliability and Availability
+Reliability	Availability
+Ability to perform correctly without failures	Ability to remain operational and accessible
+Focuses on correct operation	Focuses on uptime
+Measured by failure rate	Measured by uptime percentage

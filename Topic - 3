@@ -18,3 +18,275 @@ POST
 PUT
 PATCH
 DELETE
+
+ Answer
+ 🌐 APIs & Application Fundamentals (Week 3)
+
+APIs (Application Programming Interfaces) allow different software applications to communicate with each other. APIs are widely used in web applications, mobile applications, cloud services, and enterprise software.
+
+1. What is an API?
+
+API (Application Programming Interface) is a set of rules and protocols that allows one application to communicate with another application.
+
+Instead of accessing the database directly, the client sends a request to the API. The API processes the request, communicates with the backend application and database, and returns the response to the client.
+
+Simple Definition
+
+An API is a bridge that allows two applications to exchange data securely.
+
+Real-World Example
+
+Imagine ordering food using a food delivery app.
+
+Customer → Places an order using the mobile app.
+Waiter (API) → Takes the order to the kitchen.
+Kitchen (Backend Application) → Prepares the food.
+Store Room (Database) → Stores ingredients and order details.
+
+The customer never enters the kitchen directly. Similarly, an application never accesses the database directly—it uses an API.
+
+2. API Architecture
+
+The communication flow is:
+
+Client
+   │
+   ▼
+API
+   │
+   ▼
+Application (Backend)
+   │
+   ▼
+Database
+Step-by-Step Explanation
+Step 1: Client
+
+The client is the application used by the user.
+
+Examples:
+
+Mobile App
+Website
+Desktop Application
+
+The client sends an HTTP request to the API.
+
+Example:
+
+User clicks "View Profile"
+Step 2: API
+
+The API receives the request.
+
+Responsibilities:
+
+Validate request
+Authenticate user
+Route request
+Send request to backend service
+Step 3: Backend Application
+
+The backend contains business logic.
+
+Responsibilities:
+
+Process user request
+Perform calculations
+Fetch or update data
+Communicate with database
+Step 4: Database
+
+The database stores information permanently.
+
+Examples:
+
+User accounts
+Orders
+Products
+Employee records
+
+The backend retrieves or updates data in the database and returns the result through the API.
+
+3. Example Flow
+
+Suppose a user opens a banking app to check their account balance.
+
+Mobile App
+      │
+      ▼
+API Gateway
+      │
+      ▼
+Backend Service
+      │
+      ▼
+Database
+Complete Flow
+User opens banking app.
+Mobile app sends request to API.
+API validates user.
+API forwards request to backend.
+Backend queries database.
+Database returns balance.
+Backend sends response to API.
+API returns response to mobile app.
+Balance is displayed to the user.
+4. REST APIs
+
+REST (Representational State Transfer) is the most commonly used architecture for designing web APIs.
+
+REST APIs communicate using the HTTP protocol.
+
+Characteristics
+Stateless
+Client-server architecture
+Uses HTTP methods
+Easy to use
+Supports JSON and XML
+
+Most modern applications use JSON for sending and receiving data.
+
+5. HTTP Methods in REST APIs
+GET
+
+Used to retrieve data.
+
+Example
+GET /users
+
+Response:
+
+[
+  {
+    "id": 1,
+    "name": "John"
+  }
+]
+Real-world Example
+
+Opening your profile page.
+
+The application retrieves your information from the server.
+
+POST
+
+Used to create new data.
+
+Example
+POST /users
+
+Request:
+
+{
+  "name": "Raj",
+  "age": 24
+}
+Real-world Example
+
+Creating a new account.
+
+PUT
+
+Used to replace an existing resource completely.
+
+Example
+PUT /users/1
+
+Request:
+
+{
+  "name": "Raj Kumar",
+  "age": 25
+}
+
+All fields are updated.
+
+Real-world Example
+
+Updating your complete profile.
+
+PATCH
+
+Used to update only specific fields.
+
+Example
+PATCH /users/1
+
+Request:
+
+{
+  "age": 25
+}
+
+Only the age is updated.
+
+Real-world Example
+
+Changing only your phone number or email address.
+
+DELETE
+
+Used to delete data.
+
+Example
+DELETE /users/1
+
+Deletes the user from the database.
+
+Real-world Example
+
+Deleting a social media account.
+
+6. Difference Between PUT and PATCH
+PUT	PATCH
+Updates the entire resource	Updates only specified fields
+Replaces all existing data	Modifies selected data
+Larger request payload	Smaller request payload
+
+Example:
+
+Current user:
+
+{
+  "name": "Raj",
+  "age": 24,
+  "city": "Hyderabad"
+}
+
+PUT
+
+{
+  "name": "Raj Kumar",
+  "age": 25,
+  "city": "Hyderabad"
+}
+
+Entire resource is replaced.
+
+PATCH
+
+{
+  "age": 25
+}
+
+Only the age changes.
+
+7. HTTP Status Codes (Common Interview Topic)
+Status Code	Meaning
+200 OK	Request successful
+201 Created	Resource created successfully
+204 No Content	Request successful, no data returned
+400 Bad Request	Invalid request from client
+401 Unauthorized	Authentication required
+403 Forbidden	Access denied
+404 Not Found	Resource not found
+500 Internal Server Error	Server-side error
+8. Advantages of APIs
+Enables communication between applications.
+Improves software integration.
+Allows secure access to backend services.
+Supports automation.
+Promotes code reusability.
+Scalable and easy to maintain.
+

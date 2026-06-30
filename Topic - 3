@@ -1,0 +1,20 @@
+APIs & Application Fundamentals (Week 3)
+This is where most freshers struggle.
+What is an API?
+Explain:
+Client → API → Application → Database
+Example:
+Mobile App
+    ↓
+API Gateway
+    ↓
+Backend Service
+    ↓
+Database
+REST APIs
+Methods:
+GET
+POST
+PUT
+PATCH
+DELETE

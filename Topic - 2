@@ -1,0 +1,30 @@
+Operating Systems (Linux)
+Must know:
+Linux file system structure
+Basic commands
+ls
+cd
+pwd  
+cp
+mv
+rm
+mkdir  
+cat  
+less  
+tail  
+grep  
+find  
+File permissions
+chmod  
+chown  
+Process management
+ps
+top  
+htop  
+kill  
+Disk management
+df -h
+du -sh
+Memory and CPU monitoring
+System logs 
+ 

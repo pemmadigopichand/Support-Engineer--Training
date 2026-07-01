@@ -1,0 +1,198 @@
+Disk Mounting – Attaching a storage device for use.
+Disk Partition – Splitting a disk into logical sections.
+Disk File System – Organizes files on storage devices.
+EFS – Encrypting File System.
+NFS – Network File System.
+SFTP – SSH File Transfer Protocol.
+SCP – Secure Copy Protocol.
+    Answer
+💾 Disk Management & File Systems
+
+Disk management is the process of organizing, storing, accessing, and managing data on storage devices such as hard disks (HDDs), solid-state drives (SSDs), and network storage.
+
+1. Disk Mounting
+Definition
+
+Disk Mounting is the process of attaching a storage device or partition to the Linux file system so that users can access its files and directories.
+
+In Linux, every storage device must be mounted before it can be used.
+
+Example
+
+You plug in a USB drive. Linux mounts it to a directory such as:
+
+/media/username/USB
+
+After mounting, you can read, write, copy, and delete files on the USB drive.
+
+Common Commands
+
+Check mounted disks:
+
+mount
+
+Mount a disk:
+
+sudo mount /dev/sdb1 /mnt
+
+Unmount a disk:
+
+sudo umount /mnt
+Real-World Example
+
+A system administrator mounts a new 500 GB hard disk to the /data directory to store application logs.
+
+2. Disk Partition
+Definition
+
+A Disk Partition is the process of dividing a physical disk into multiple logical sections.
+
+Each partition behaves like a separate disk and can have its own file system.
+
+Why Partition a Disk?
+Separate operating system and user data
+Improve data organization
+Support multiple operating systems
+Simplify backup and recovery
+Example
+
+A 1 TB hard disk can be divided into:
+
+Partition	Size	Purpose
+Partition 1	100 GB	Operating System
+Partition 2	400 GB	Applications
+Partition 3	500 GB	User Data
+Common Commands
+
+Display partitions:
+
+lsblk
+
+or
+
+sudo fdisk -l
+Real-World Example
+
+A company server has separate partitions for the operating system, databases, and backup files.
+
+3. Disk File System
+Definition
+
+A File System is the method used by an operating system to organize, store, retrieve, and manage files on a storage device.
+
+Without a file system, the operating system cannot understand how data is stored on the disk.
+
+Common File Systems
+File System	Operating System
+ext4	Linux
+XFS	Linux
+NTFS	Windows
+FAT32	Windows, USB Drives
+exFAT	Windows, macOS, Linux
+Functions
+Organizes files
+Stores file names
+Maintains permissions
+Tracks free and used disk space
+Retrieves files quickly
+Example
+
+Linux typically uses the ext4 file system for its partitions.
+
+4. EFS (Encrypting File System)
+Definition
+
+Encrypting File System (EFS) is a Windows feature that encrypts files and folders to protect them from unauthorized access.
+
+Encryption converts readable data into an unreadable format that only authorized users can decrypt.
+
+Features
+Protects sensitive files
+Encryption is automatic after enabling EFS
+Only authorized users can access encrypted data
+Example
+
+A company employee encrypts confidential salary documents using EFS to prevent unauthorized access.
+
+Advantages
+Data security
+Easy to use
+Integrated with Windows
+5. NFS (Network File System)
+Definition
+
+Network File System (NFS) is a protocol that allows computers to access files stored on another computer over a network as if they were local files.
+
+Features
+File sharing across Linux and UNIX systems
+Centralized storage
+Multiple users can access shared files
+Example
+
+An organization stores project files on a central server. Employees access the shared files using NFS instead of copying them to individual computers.
+
+Advantages
+Easy file sharing
+Centralized management
+Efficient collaboration
+6. SFTP (SSH File Transfer Protocol)
+Definition
+
+SFTP is a secure protocol used to transfer files between computers over an encrypted SSH (Secure Shell) connection.
+
+Unlike FTP, SFTP encrypts both data and login credentials.
+
+Features
+Secure file transfer
+Encryption using SSH
+Supports authentication
+Allows upload, download, rename, and delete operations
+Default Port
+
+Port 22
+
+Example
+
+A developer securely uploads application files to a Linux server using SFTP.
+
+Advantages
+Secure communication
+Data encryption
+Safe for internet file transfers
+7. SCP (Secure Copy Protocol)
+Definition
+
+SCP is a command-line utility used to securely copy files between local and remote systems using SSH.
+
+Like SFTP, SCP encrypts data during transfer.
+
+Default Port
+
+Port 22
+
+Syntax
+
+Copy a local file to a remote server:
+
+scp file.txt user@server:/home/user/
+
+Copy a file from a remote server to the local computer:
+
+scp user@server:/home/user/file.txt .
+Example
+
+A system administrator copies a backup file from a production server to a local computer using SCP.
+
+Advantages
+Fast
+Secure
+Easy to use
+Uses SSH encryption
+Difference Between SFTP and SCP
+SFTP	SCP
+File Transfer Protocol	Secure Copy Utility
+Interactive file management	Simple file copying
+Supports upload, download, rename, delete	Mainly copies files
+Suitable for regular file management	Suitable for quick file transfers
+Uses SSH (Port 22)	Uses SSH (Port 22)
+

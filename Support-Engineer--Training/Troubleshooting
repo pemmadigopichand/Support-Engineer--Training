@@ -1,0 +1,285 @@
+Http status codes & their description
+Source code management (GIT)
+IAAS
+SAAS
+PAAs
+Observability tools (logs , metrics, traces)
+Application monitoring , Infra monitoring 
+
+    Answer
+🌐 HTTP Status Codes
+
+HTTP status codes are 3-digit numbers returned by a web server to indicate the result of a client's request.
+
+1xx – Informational
+
+These codes indicate that the request has been received and is being processed.
+
+Status Code	Description
+100 Continue	The server has received the request headers and the client can continue sending the request body.
+101 Switching Protocols	The server is switching protocols as requested by the client.
+2xx – Success
+
+These codes indicate that the request was successfully received and processed.
+
+Status Code	Description
+200 OK	The request was successful.
+201 Created	A new resource was successfully created.
+202 Accepted	The request has been accepted for processing but is not yet complete.
+204 No Content	The request succeeded, but there is no content to return.
+3xx – Redirection
+
+These codes indicate that additional action is required to complete the request.
+
+Status Code	Description
+301 Moved Permanently	The requested resource has permanently moved to a new URL.
+302 Found	The resource is temporarily available at another URL.
+304 Not Modified	The cached version is still valid; no new data needs to be sent.
+4xx – Client Errors
+
+These codes indicate that the problem is with the client's request.
+
+Status Code	Description
+400 Bad Request	The request is invalid or malformed.
+401 Unauthorized	Authentication is required.
+403 Forbidden	The client does not have permission to access the resource.
+404 Not Found	The requested resource does not exist.
+405 Method Not Allowed	The HTTP method is not allowed for the resource.
+408 Request Timeout	The server timed out waiting for the request.
+409 Conflict	A conflict occurred with the current state of the resource.
+5xx – Server Errors
+
+These codes indicate that the server encountered an error while processing the request.
+
+Status Code	Description
+500 Internal Server Error	A generic server error occurred.
+501 Not Implemented	The server does not support the requested functionality.
+502 Bad Gateway	The server received an invalid response from another server.
+503 Service Unavailable	The server is temporarily unavailable due to maintenance or overload.
+504 Gateway Timeout	The server did not receive a timely response from an upstream server.
+🌿 Source Code Management (Git)
+What is Git?
+
+Git is a distributed version control system used to track changes in source code, collaborate with multiple developers, and maintain different versions of a project.
+
+Features
+Tracks code changes
+Supports collaboration
+Maintains version history
+Enables branching and merging
+Allows rollback to previous versions
+Common Git Commands
+Command	Description
+git init	Initialize a new Git repository
+git clone <repository>	Copy a remote repository to your local machine
+git status	Show the current status of the repository
+git add <file>	Stage changes for commit
+git commit -m "message"	Save staged changes with a commit message
+git push	Upload local commits to the remote repository
+git pull	Download and merge changes from the remote repository
+git fetch	Download changes without merging
+git branch	List or create branches
+git checkout <branch>	Switch to another branch
+git merge <branch>	Merge another branch into the current branch
+git log	Display commit history
+Git Workflow
+Working Directory
+        │
+        ▼
+git add
+        │
+        ▼
+Staging Area
+        │
+        ▼
+git commit
+        │
+        ▼
+Local Repository
+        │
+        ▼
+git push
+        │
+        ▼
+Remote Repository (GitHub)
+☁️ Cloud Service Models
+
+Cloud computing provides services in three primary models:
+
+IaaS
+PaaS
+SaaS
+1. IaaS (Infrastructure as a Service)
+Definition
+
+IaaS provides virtualized computing resources over the internet.
+
+The cloud provider manages:
+
+Physical servers
+Storage
+Networking
+Virtualization
+
+The customer manages:
+
+Operating System
+Applications
+Data
+Examples
+Amazon EC2
+Microsoft Azure Virtual Machines
+Google Compute Engine
+Use Cases
+Hosting applications
+Virtual servers
+Disaster recovery
+Development environments
+2. PaaS (Platform as a Service)
+Definition
+
+PaaS provides a platform for developing, testing, and deploying applications without managing the underlying infrastructure.
+
+The cloud provider manages:
+
+Infrastructure
+Operating System
+Runtime
+Middleware
+
+The customer manages:
+
+Application code
+Data
+Examples
+Google App Engine
+Azure App Service
+Heroku
+Benefits
+Faster application development
+No server management
+Automatic scaling
+3. SaaS (Software as a Service)
+Definition
+
+SaaS delivers fully functional software applications over the internet.
+
+The cloud provider manages everything.
+
+Users simply access the software through a web browser.
+
+Examples
+Gmail
+Microsoft 365
+Salesforce
+Zoom
+Benefits
+No installation required
+Accessible from anywhere
+Automatic updates
+Difference Between IaaS, PaaS, and SaaS
+Feature	IaaS	PaaS	SaaS
+Infrastructure Managed By	Cloud Provider	Cloud Provider	Cloud Provider
+Operating System Managed By	Customer	Cloud Provider	Cloud Provider
+Application Managed By	Customer	Customer	Cloud Provider
+User Responsibility	OS, Apps, Data	Apps, Data	Only use the software
+Example	Amazon EC2	Google App Engine	Gmail
+📊 Observability Tools
+What is Observability?
+
+Observability is the ability to understand the internal state of an application or system by analyzing its outputs.
+
+The three pillars of observability are:
+
+Logs
+Metrics
+Traces
+1. Logs
+
+Logs are detailed records of events that occur within an application or system.
+
+Example
+2026-06-30 10:30:45 INFO User login successful
+2026-06-30 10:31:10 ERROR Database connection failed
+Uses
+Troubleshooting
+Debugging
+Security auditing
+2. Metrics
+
+Metrics are numerical values collected over time that represent system performance.
+
+Examples
+CPU Usage
+Memory Usage
+Disk Usage
+Network Traffic
+Response Time
+Uses
+Performance monitoring
+Capacity planning
+Alerting
+3. Traces
+
+Traces show the complete journey of a request through multiple services.
+
+Example
+Client
+   │
+API Gateway
+   │
+Authentication Service
+   │
+Order Service
+   │
+Database
+
+Traces help identify where delays or failures occur.
+
+Uses
+Performance optimization
+Root cause analysis
+Microservices debugging
+🖥️ Application Monitoring
+Definition
+
+Application monitoring tracks the health, availability, and performance of software applications.
+
+Monitors
+Response time
+API performance
+Error rates
+Request throughput
+Application availability
+Example
+
+An e-commerce application is monitored to ensure users can place orders without delays.
+
+Benefits
+Detects application failures
+Improves user experience
+Helps identify slow APIs
+🏗️ Infrastructure Monitoring
+Definition
+
+Infrastructure monitoring tracks the health and performance of the underlying hardware and cloud resources.
+
+Monitors
+CPU Usage
+Memory Usage
+Disk Usage
+Network Utilization
+Server Health
+Example
+
+A cloud administrator monitors CPU usage on virtual machines to prevent performance issues.
+
+Benefits
+Prevents server failures
+Improves resource utilization
+Ensures high availability
+Difference Between Application Monitoring and Infrastructure Monitoring
+Application Monitoring	Infrastructure Monitoring
+Focuses on software performance	Focuses on hardware and infrastructure
+Monitors APIs, response time, errors	Monitors CPU, memory, disk, and network
+Helps improve user experience	Helps maintain system health

@@ -1,0 +1,386 @@
+Operating Systems (Linux)
+Must know:
+Linux file system structure
+Basic commands
+ls
+cd
+pwd  
+cp
+mv
+rm
+mkdir  
+cat  
+less  
+tail  
+grep  
+find  
+File permissions
+chmod  
+chown  
+Process management
+ps
+top  
+htop  
+kill  
+Disk management
+df -h
+du -sh
+Memory and CPU monitoring
+System logs 
+ Answers
+ 🐧 Operating Systems (Linux)
+
+Linux is an open-source operating system widely used for servers, cloud computing, networking, and DevOps. It provides a command-line interface (CLI) to efficiently manage files, processes, users, and system resources.
+
+1. Linux File System Structure
+
+Linux organizes files in a hierarchical (tree-like) structure starting from the root directory (/).
+
+/
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+├── lib
+├── media
+├── mnt
+├── opt
+├── proc
+├── root
+├── run
+├── sbin
+├── srv
+├── sys
+├── tmp
+├── usr
+└── var
+Important Directories
+Directory	Purpose
+/	Root directory (top of the filesystem)
+/bin	Essential user commands (ls, cp, mv)
+/boot	Boot loader files and kernel
+/dev	Device files
+/etc	System configuration files
+/home	Home directories of users
+/lib	Shared libraries
+/media	Mounted removable devices (USB, CD)
+/mnt	Temporary mount points
+/opt	Optional software packages
+/proc	Information about running processes
+/root	Home directory of root user
+/tmp	Temporary files
+/usr	User applications and utilities
+/var	Log files, mail, databases
+2. Basic Linux Commands
+ls (List Files)
+
+Lists files and directories.
+
+Syntax:
+
+ls
+
+Examples:
+
+ls
+ls -l
+ls -a
+ls -lh
+
+Options:
+
+-l → Long listing
+-a → Show hidden files
+-h → Human-readable file sizes
+cd (Change Directory)
+
+Moves between directories.
+
+cd Documents
+cd ..
+cd /
+cd ~
+pwd (Print Working Directory)
+
+Displays the current directory.
+
+pwd
+
+Output:
+
+/home/gopi/Documents
+cp (Copy Files)
+
+Copies files or directories.
+
+cp file1.txt file2.txt
+cp -r folder1 folder2
+
+-r copies directories recursively.
+
+mv (Move/Rename Files)
+
+Moves or renames files.
+
+Rename:
+
+mv old.txt new.txt
+
+Move:
+
+mv file.txt Documents/
+rm (Remove Files)
+
+Deletes files or directories.
+
+rm file.txt
+rm -r folder
+rm -rf folder
+
+Warning: rm -rf permanently deletes files.
+
+mkdir (Make Directory)
+
+Creates new directories.
+
+mkdir Project
+mkdir -p Project/src
+cat (Display File Content)
+
+Displays file contents.
+
+cat file.txt
+
+Create a file:
+
+cat > notes.txt
+less (View Large Files)
+
+Opens large files one page at a time.
+
+less logfile.txt
+
+Useful keys:
+
+Space → Next page
+b → Previous page
+q → Quit
+tail (View End of File)
+
+Shows the last lines of a file.
+
+tail logfile.txt
+tail -20 logfile.txt
+tail -f logfile.txt
+
+-f continuously monitors new log entries.
+
+grep (Search Text)
+
+Searches for text inside files.
+
+grep error logfile.txt
+grep -i error logfile.txt
+grep -r "main" .
+
+Options:
+
+-i Ignore case
+-r Recursive search
+find (Search Files)
+
+Finds files and directories.
+
+find . -name "*.txt"
+find /home -name notes.txt
+find . -type d
+3. File Permissions
+
+Linux controls access using three permission types:
+
+Read (r)
+Write (w)
+Execute (x)
+
+Permissions apply to:
+
+Owner
+Group
+Others
+
+Example:
+
+-rwxr-xr--
+
+Meaning:
+
+User	Permission
+Owner	rwx
+Group	r-x
+Others	r--
+4. chmod (Change Permissions)
+
+Changes file permissions.
+
+Numeric values:
+
+4 = Read
+2 = Write
+1 = Execute
+
+Examples:
+
+chmod 755 file.sh
+chmod 644 file.txt
+chmod +x script.sh
+
+Permission meanings:
+
+755 → Owner: rwx, Group: r-x, Others: r-x
+644 → Owner: rw-, Group: r--, Others: r--
+5. chown (Change Ownership)
+
+Changes file owner.
+
+sudo chown user file.txt
+sudo chown user:group file.txt
+
+Example:
+
+sudo chown gopi project.txt
+6. Process Management
+ps
+
+Shows running processes.
+
+ps
+ps -ef
+ps aux
+top
+
+Displays real-time CPU, memory, and process usage.
+
+top
+
+Press q to quit.
+
+htop
+
+Improved version of top (if installed).
+
+htop
+
+Features:
+
+Colorful interface
+Easy navigation
+Interactive process management
+kill
+
+Terminates a process.
+
+First find the Process ID (PID):
+
+ps -ef
+
+Kill the process:
+
+kill 1234
+
+Force kill:
+
+kill -9 1234
+7. Disk Management
+df -h
+
+Shows disk usage.
+
+df -h
+
+Example output:
+
+Filesystem      Size Used Avail Use%
+/dev/sda1        50G  20G   30G 40%
+
+-h displays sizes in KB, MB, or GB.
+
+du -sh
+
+Shows directory size.
+
+du -sh Documents
+du -sh *
+
+Example output:
+
+2.3G Documents
+8. Memory and CPU Monitoring
+Check Memory
+free -h
+
+Example:
+
+Total: 8GB
+Used: 3GB
+Free: 5GB
+CPU Information
+lscpu
+
+Shows:
+
+CPU model
+Number of cores
+Threads
+Architecture
+System Monitoring
+top
+
+or
+
+htop
+
+Displays:
+
+CPU usage
+Memory usage
+Running processes
+Load average
+9. System Logs
+
+System logs help troubleshoot errors and monitor system activity.
+
+Common log directory:
+
+/var/log
+
+View logs:
+
+cat /var/log/syslog
+
+or
+
+less /var/log/syslog
+
+View the latest log entries:
+
+tail -f /var/log/syslog
+
+Common log files:
+
+Log File	Purpose
+/var/log/syslog	General system logs
+/var/log/auth.log	Login and authentication logs
+/var/log/kern.log	Kernel logs
+/var/log/dmesg	Boot and hardware messages
+📌 Quick Revision
+Linux File System: Organized as a tree starting from /.
+Basic Commands: ls, cd, pwd, cp, mv, rm, mkdir, cat, less, tail, grep, find.
+File Permissions: Read (r), Write (w), Execute (x).
+Permission Commands: chmod, chown.
+Process Management: ps, top, htop, kill.
+Disk Management: df -h, du -sh.
+Memory & CPU: free -h, lscpu, top, htop.
+System Logs: Stored in /var/log and viewed with cat, less, or tail -f.
+
+

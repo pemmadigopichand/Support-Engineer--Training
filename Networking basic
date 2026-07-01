@@ -1,0 +1,170 @@
+Networking Fundamentals
+Topics:
+OSI Model
+Layer 1 to Layer 7
+Real-world examples
+TCP/IP Model
+TCP
+UDP
+Ports
+Common ports 
+DNS
+What is DNS
+DNS resolution flow
+A Record
+CNAME  
+MX Record 
+
+Answers:
+1. OSI Model (Open Systems Interconnection)
+
+The OSI model explains how data travels from one device to another over a network using 7 layers.
+
+🔹 Layer 1: Physical Layer
+Transfers raw bits (0s and 1s)
+Uses cables, signals, radio waves
+Devices: hubs, cables, repeaters
+Example: Ethernet cable sending data
+🔹 Layer 2: Data Link Layer
+Transfers data between devices in same network
+Uses MAC address
+Devices: switches, network cards
+Example: Wi-Fi sending data to your laptop
+🔹 Layer 3: Network Layer
+Finds best path for data (routing)
+Uses IP address
+Devices: routers
+Example: Data traveling from India to US server
+🔹 Layer 4: Transport Layer
+End-to-end delivery of data
+Uses TCP or UDP
+Example: WhatsApp message delivery, video streaming
+🔹 Layer 5: Session Layer
+Maintains connection between devices
+Controls sessions
+Example: Login session in Instagram or Gmail
+🔹 Layer 6: Presentation Layer
+Converts data format, encryption, compression
+Example: HTTPS encryption, image/audio formats
+🔹 Layer 7: Application Layer
+Interface for users
+Example: Chrome, YouTube, Gmail
+📌 Real-world OSI Example
+
+When you send a WhatsApp message:
+
+App Layer → WhatsApp app
+Transport → TCP/UDP
+Network → IP routing
+Data Link → Wi-Fi/MAC
+Physical → wireless signals
+2. TCP/IP Model
+
+This is the real-world internet model.
+
+🔹 Network Access Layer
+Combines OSI Layer 1 + 2
+Handles hardware + MAC address
+🔹 Internet Layer
+Uses IP address
+Handles routing across networks
+🔹 Transport Layer
+Uses TCP or UDP
+Controls delivery of data
+🔹 Application Layer
+Web, email, apps
+Protocols: HTTP, HTTPS, DNS, FTP
+3. TCP (Transmission Control Protocol)
+Connection-oriented
+Reliable delivery
+Data arrives in order
+Lost packets are retransmitted
+Examples:
+Websites
+File downloads
+Email
+
+👉 Think: “Slow but safe delivery”
+
+4. UDP (User Datagram Protocol)
+Connectionless
+Fast communication
+No guarantee of delivery
+No ordering
+Examples:
+Online gaming
+Video streaming
+Voice calls
+
+👉 Think: “Fast but not always reliable”
+
+5. Ports
+
+Ports are logical doors used by applications to communicate.
+
+IP address = location
+Port = service door
+Range:
+
+0 – 65535
+
+6. Common Ports
+
+HTTP → 80 (web browsing)
+HTTPS → 443 (secure web)
+FTP → 21 (file transfer)
+SSH → 22 (remote login)
+DNS → 53 (name resolution)
+SMTP → 25 (send email)
+IMAP → 143 (receive email)
+
+7. DNS (Domain Name System)
+
+DNS is like the internet phonebook.
+
+It converts domain names into IP addresses.
+
+Example:
+
+www.google.com → 142.250.x.x
+
+8. DNS Resolution Flow
+
+When you enter a website:
+
+Browser cache check
+OS cache check
+Router cache check
+ISP DNS resolver
+Root DNS server
+TLD server (.com / .in)
+Authoritative DNS server
+IP address returned
+Website loads
+9. DNS Records
+🔹 A Record (Address Record)
+Maps domain → IPv4 address
+
+Example:
+example.com → 192.168.1.1
+
+👉 Used to point domain to server IP
+
+🔹 CNAME Record (Canonical Name)
+Maps one domain to another (alias)
+
+Example:
+www.example.com → example.com
+
+👉 Used for subdomains or redirection
+
+🔹 MX Record (Mail Exchange)
+Handles email delivery
+Points to mail servers
+
+Example:
+example.com → mail server
+
+👉 Without MX record, email cannot be received
+
+

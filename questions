@@ -1,0 +1,80 @@
+VPC 
+CIDR
+Networking Fundamentals
+Topics:
+OSI Model
+Layer 1 to Layer 7
+Real-world examples
+TCP/IP Model
+TCP
+UDP
+Ports
+Common ports 
+DNS
+What is DNS
+DNS resolution flow
+A Record
+CNAME  
+MX Record 
+ 
+Operating Systems (Linux)
+Must know:
+Linux file system structure
+Basic commands
+ls
+cd
+pwd  
+cp
+mv
+rm
+mkdir  
+cat  
+less  
+tail  
+grep  
+find  
+File permissions
+chmod  
+chown  
+Process management
+ps
+top  
+htop  
+kill  
+Disk management
+df -h
+du -sh
+Memory and CPU monitoring
+System logs 
+Phase 2: APIs & Application Fundamentals (Week 3)
+This is where most freshers struggle.
+What is an API?
+Explain:
+Client → API → Application → Database
+Example:
+Mobile App
+    ↓
+API Gateway
+    ↓
+Backend Service
+    ↓
+Database
+REST APIs
+Methods:
+GET
+POST
+PUT
+PATCH
+DELETE
+Distrubuted system
+CAP THEOREM
+CLOUD THEOREM
+FAULT TOLERANCE
+LOAD BALANCER
+Disk Mounting	
+Disk Partition	
+Disk File System	
+EFS	
+NFS	
+SFTP	
+SC
